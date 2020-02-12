@@ -35,16 +35,16 @@ An API key for the Black Duck server must also be configured in the `.restconfig
 
 # INSTALLATION
 
-Install the `hub-rest-api-python` package:
+First install the `hub-rest-api-python` package:
 
     git clone https://github.com/blackducksoftware/hub-rest-api-python.git
     cd hub-rest-api-python
     pip3 install -r requirements.txt
     pip3 install .
     
-Copy the `ignore_snippets.py` script into the `examples` sub-folder within `hub-rest-api-python`.
+Extract this GIT repo into a folder (`git clone https://github.com/matthewb66/yocto_create_copy_project`).
 
-Configure the hub connection in the `.restconfig.json` file within `hub-rest-api-python` - example contents:
+Configure the hub connection in the `.restconfig.json` file within the `yocto_create_copy_project` folder - example contents:
 
     {
       "baseurl": "https://myhub.blackducksoftware.com",
