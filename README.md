@@ -1,4 +1,4 @@
-# Synopsys Duplicate Yocto Project Script - find_matching_KB_component_from_bom_yocto.py
+# Synopsys Duplicate Yocto Project Script - yocto_create_copy_project.py
 # INTRODUCTION
 
 This script is provided under an OSS license as an example of how to manage Yocto projects.
@@ -21,7 +21,7 @@ Note that it is planned to map all the OpenEmbedded components to the origins in
 
 # DESCRIPTION
 
-The `find_matching_KB_component_from_bom_yocto.py` script references an existing Black Duck project created from a Bitbake build containing Yocto dependencies, creates a duplicate project (name and version specified) and adds components to the new project by matching the Yocto (OpenEmbedded) components to the original OSS components used for the Yocto build.
+The `yocto_create_copy_project.py` script references an existing Black Duck project created from a Bitbake build containing Yocto dependencies, creates a duplicate project (name and version specified) and adds components to the new project by matching the Yocto (OpenEmbedded) components to the original OSS components used for the Yocto build.
 
 The objective is to map security vulnerabilities to a Yocto project - which is currently missing from the project created from the bitbake dependencies.
 
@@ -55,9 +55,9 @@ Configure the hub connection in the `.restconfig.json` file within `hub-rest-api
 
 # USAGE
 
-The `find_matching_KB_component_from_bom_yocto.py` script can be invoked as follows:
+The `yocto_create_copy_project.py` script can be invoked as follows:
 
-    usage: find_matching_KB_component_from_bom_yocto.py import [-h] -p PROJECT -v VERSION -k KBFILE -op
+    usage: python3 yocto_create_copy_project.py import [-h] -p PROJECT -v VERSION -k KBFILE -op
                               OUTPROJECT -ov OUTVERSION [-d]
 
     optional arguments:
@@ -87,6 +87,6 @@ Ensure that the script is invoked within the downloaded folder (where the lookup
 The following command will extract the components from the (my_yocto_in/warrior) project, create a new project
 (my_yocto_in/warrior) and copy the components across as original matches:
 
-    python3 find_matching_KB_component_from_bom_yocto.py input -p my_yocto_in -v warrior -k lookup.yocto
+    python3 yocto_create_copy_project.py input -p my_yocto_in -v warrior -k lookup.yocto
         -op my_yocto_out -ov warrior
 
