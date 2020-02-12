@@ -85,7 +85,7 @@ components added as dependencies.
 Ensure that the script is invoked within the downloaded folder (where the lookup.yocto file exists).
 
 The following command will extract the components from the (my_yocto_in/warrior) project, create a new project
-(my_yocto_in/warrior) and copy the components across as original matches:
+(my_yocto_out/warrior) and copy the components across as original matches:
 
     python3 yocto_create_copy_project.py input -p my_yocto_in -v warrior -k lookup.yocto
         -op my_yocto_out -ov warrior
