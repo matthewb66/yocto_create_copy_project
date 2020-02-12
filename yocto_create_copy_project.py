@@ -450,7 +450,7 @@ def read_project(proj, ver):
 #
 # Main Program
             
-parser = argparse.ArgumentParser(description='Process or import component list into project/version', prog='import_manifest')
+parser = argparse.ArgumentParser(description='Process or import component list into project/version', prog='yocto_create_copy_project')
 
 subparsers = parser.add_subparsers(help='Choose operation mode', dest='command')
 # create the parser for the "kblookup" command
