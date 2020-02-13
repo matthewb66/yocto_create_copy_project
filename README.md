@@ -87,6 +87,6 @@ Ensure that the script is invoked within the downloaded folder (where the lookup
 The following command will extract the components from the (my_yocto_in/warrior) project, create a new project
 (my_yocto_out/warrior) and copy the components across as original matches:
 
-    python3 yocto_create_copy_project.py input -p my_yocto_in -v warrior -k kblookup.yocto
+    python3 yocto_create_copy_project.py import -p my_yocto_in -v warrior -k kblookup.yocto
         -op my_yocto_out -ov warrior
 
