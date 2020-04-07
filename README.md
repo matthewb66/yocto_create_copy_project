@@ -111,7 +111,7 @@ Further explanation of options for kblookup mode is provided below:
 
 ## import Mode
 
-The `import` mode requires a component list file and a KB Lookup File to be specified and will lookup the components in the KB Lookup File to add new manual components to the specified Black Duck project/version (which can be created by the script if they do not already exist subject to permissions).
+The `import` mode requires an input project/version and a KB Lookup File to be specified and will lookup the components in the KB Lookup File to add new manual components to the specified output Black Duck project/version (which can be created by the script if they do not already exist subject to permissions).
 
 The full list of options in import mode can be displayed using the command:
 
@@ -119,23 +119,23 @@ The full list of options in import mode can be displayed using the command:
 
 The usage for import mode is:
 
-    usage: import_manifest import [-h] -k KBFILE -p INPUT_PROJECT -v INPUT_VERSION -op OUTPUT_PROJECT -ov OUTPUT_VERSION
+    usage: import_manifest import [-h] [-d] -k KBFILE -p INPUT_PROJECT -v INPUT_VERSION -op OUTPUT_PROJECT -ov OUTPUT_VERSION
 
 Further explanation of options for import mode:
 
         -h, --help          show this help message and exit
         -p PROJECT, --project PROJECT
-                            Input BD project
+                            REQUIRED Input BD project
         -v VERSION, --version VERSION
-                            Input BD project version
+                            REQUIRED Input BD project version
         -k KBFILE, --kbfile KBFILE
-                            Input file of KB component IDs and URLs matching
+                            REQUIRED Input file of KB component IDs and URLs matching
                             manifest components
         -op OUTPROJECT, --outproject OUTPROJECT
-                            Output Black Duck project name
+                            REQUIRED Output Black Duck project name
         -ov OUTVERSION, --outversion OUTVERSION
-                            Output Black Duck version name
-        -d, --delete        Delete existing manual components from the project -
+                            REQUIRED Output Black Duck version name
+        -d, --delete        OPTIONAL Delete existing manual components from the project -
                             if not specified then components will be added to the
                             existing list
 
@@ -156,7 +156,7 @@ The second command will extract the components from the (`my_yocto_in/warrior`) 
 
 # USAGE AFTER RESCAN
 
-If you rescan an existing project using Detect to export dependencies from Bitbake and updating an existing Black Duck project/version, then you can use the `yocto_create_copy_project.py` script to update the existing output project/version.
+If you rescan a Yocto project using Detect to export dependencies from Bitbake and update an existing Black Duck project/version, then you can use the `yocto_create_copy_project.py` script to update an existing copy project/version.
 
 You would need to first rerun the `kblookup` mode on the input project/version, but specify the `-k kblookup.yocto` option to process the existing kblookup file from the previous run, for example:
 
