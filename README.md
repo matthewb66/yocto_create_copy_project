@@ -1,6 +1,10 @@
 # Synopsys Duplicate Yocto Project Script - yocto_create_copy_project.py
 # INTRODUCTION
 
+```diff
+- Note that this script is no longer required because Yocto/OpenEmbdedded components imported using Detect have upstream vulnerabilities associated automatically.
+```
+
 This script is provided under an OSS license as an example of how to manage Yocto projects.
 
 It does not represent any extension of licensed functionality of Synopsys software itself and is provided as-is, without warranty or liability.
